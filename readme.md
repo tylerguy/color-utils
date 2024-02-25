@@ -32,7 +32,7 @@ hexToRgb("#rrggbb") // returns an array of integers '[ r, g, b ]'
 
 Converts a hexadecimal color to its rgb equivalent
 
-```js 
+```js
 darkenColor([r, g, b], percent) // returns an array of integers '[ r, g, b ]'
 ```
 
