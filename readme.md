@@ -27,19 +27,19 @@ rgbToHex(r, g, b) // returns a string in the format "#rrggbb"
 Converts a rgb color to its hex equivalent
 
 ```js
-hexToRgb("#rrggbb") // returns an array of integers '[ r, g, b]'
+hexToRgb("#rrggbb") // returns an array of integers '[ r, g, b ]'
 ```
 
 Converts a hexadecimal color to its rgb equivalent
 
 ```js 
-darkenColor([r, g, b], percent)
+darkenColor([r, g, b], percent) // returns an array of integers '[ r, g, b ]'
 ```
 
 Darkens an input rgb color by a percentage ( 0 - 100 )
 
 ```js
-lightenColor([r, g, b], percent)
+lightenColor([r, g, b], percent) // returns an array of integers '[ r, g, b ]'
 ```
 
 Lightens an input rgb color by a percentage ( 0 - 100 ) 
