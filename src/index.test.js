@@ -1,5 +1,6 @@
 const colorUtils = require("./index");
 
+
 describe("colorUtils", () => {
   describe("hexToRgb", () => {
     it("should convert a hex color to RGB", () => {
