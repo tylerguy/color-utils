@@ -42,8 +42,7 @@ Darkens an input rgb color by a percentage ( 0 - 100 )
 lightenColor([r, g, b], percent) // returns an array of integers '[ r, g, b ]'
 ```
 
-Lightens an input rgb color by a percentage ( 0 - 100 ) 
-
+Lightens an input rgb color by a percentage ( 0 - 100 )
 
 ## License
 
