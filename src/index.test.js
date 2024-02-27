@@ -1,6 +1,5 @@
 const colorUtils = require("./index");
 
-
 describe("colorUtils", () => {
   describe("hexToRgb", () => {
     it("should convert a hex color to RGB", () => {
@@ -47,6 +46,39 @@ describe("colorUtils", () => {
       expect(colorUtils.darkenColor([255, 0, 0], 50)).toEqual([128, 0, 0]);
       expect(colorUtils.darkenColor([0, 255, 0], 50)).toEqual([0, 128, 0]);
       expect(colorUtils.darkenColor([0, 0, 255], 50)).toEqual([0, 0, 128]);
+    });
+  });
+
+  describe("rgbToHsl", () => {
+    it("should convert RGB values to HSL", () => {
+      // Test cases
+      expect(colorUtils.rgbToHsl([0, 0, 0])).toEqual([0, 0, 0]);
+      expect(colorUtils.rgbToHsl([255, 255, 255])).toEqual([0, 0, 100]);
+      expect(colorUtils.rgbToHsl([255, 0, 0])).toEqual([0, 100, 50]);
+      expect(colorUtils.rgbToHsl([0, 255, 0])).toEqual([120, 100, 50]);
+      expect(colorUtils.rgbToHsl([0, 0, 255])).toEqual([240, 100, 50]);
+    });
+  });
+
+  describe("hslToRgb", () => {
+    it("should convert HSL values to RGB", () => {
+      // Test cases
+      expect(colorUtils.hslToRgb([0, 0, 0])).toEqual([0, 0, 0]);
+      expect(colorUtils.hslToRgb([0, 0, 100])).toEqual([255, 255, 255]);
+      expect(colorUtils.hslToRgb([0, 100, 50])).toEqual([255, 0, 0]);
+      expect(colorUtils.hslToRgb([120, 100, 50])).toEqual([0, 255, 0]);
+      expect(colorUtils.hslToRgb([240, 100, 50])).toEqual([0, 0, 255]);
+    });
+  });
+
+  describe("getComplimentaryColor", () => {
+    it("should return the complimentary color of a given color", () => {
+      // Test cases
+      expect(colorUtils.getComplimentaryColor([0, 0, 0])).toEqual([255, 255, 255]);
+      expect(colorUtils.getComplimentaryColor([255, 255, 255])).toEqual([0, 0, 0]);
+      expect(colorUtils.getComplimentaryColor([255, 0, 0])).toEqual([0, 255, 255]);
+      expect(colorUtils.getComplimentaryColor([0, 255, 0])).toEqual([255, 0, 255]);
+      expect(colorUtils.getComplimentaryColor([0, 0, 255])).toEqual([255, 255, 0]);
     });
   });
 });
