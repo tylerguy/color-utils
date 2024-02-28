@@ -173,7 +173,6 @@ function hslToRgb(hsl) {
  * Returns the complimentary color of a given color
  * @param {number[]} color - The RGB array to get the complimentary color of
  * @returns {number[]} The complimentary RGB array
- * @borrows rgbToHsl
  * @example
  * getComplimentaryColor([255, 0, 0]); // [0, 255, 255] (cyan)
  */

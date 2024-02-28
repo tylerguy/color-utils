@@ -189,25 +189,6 @@ Returns the complimentary color of a given color
 getComplimentaryColor([255, 0, 0]); // [0, 255, 255] (cyan)
 ```
 
-<a name="getComplimentaryColor.rgbToHsl"></a>
-
-### getComplimentaryColor.rgbToHsl(color) ⇒ <code>Array.&lt;number&gt;</code>
-
-Converts an RGB color to HSL
-
-**Kind**: static method of [<code>getComplimentaryColor</code>](#getComplimentaryColor)
-**Returns**: <code>Array.&lt;number&gt;</code> - The HSL array
-
-| Param | Type | Description |
-| --- | --- | --- |
-| color | <code>Array.&lt;number&gt;</code> | The RGB array to convert |
-
-**Example**
-
-```js
-rgbToHsl([255, 0, 0]); // [0, 100, 50] (red)
-```
-
 ## License
 
 This project is licensed under the [MIT License](LICENSE)
