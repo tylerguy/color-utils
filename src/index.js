@@ -1,3 +1,11 @@
+/**
+ * Converts a hex color to an RGB array
+ * @param {string} hex - The hex color to convert
+ * @returns {number[]} The RGB array
+ * @throws {Error} If the input is not a valid hex color
+ * @example
+ * hexToRgb('#ff0000'); // [255, 0, 0] (red)
+ */
 function hexToRgb(hex) {
   const regex = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i;
   const result = regex.exec(hex);
@@ -10,10 +18,26 @@ function hexToRgb(hex) {
   return [r, g, b];
 }
 
+/**
+ * Converts an RGB array to a hex color
+ * @param {number[]} rgb - The RGB array to convert
+ * @returns {string} The hex color
+ * @example
+ * rgbToHex([255, 0, 0]); // '#ff0000' (red)
+ */
 function rgbToHex([r, g, b]) {
   return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
 }
 
+/**
+ * Lightens a color by a given percentage
+ * @param {number[]} color - The RGB array to lighten
+ * @param {number} percent - The percentage to lighten the color by
+ * @returns {number[]} The lightened RGB array
+ * @throws {Error} If the percentage is not between 0 and 100
+ * @example
+ * lightenColor([255, 0, 0], 50); // [255, 128, 128] (light red)
+ */
 function lightenColor(color, percent) {
   if (percent < 0 || percent > 100) {
     throw new Error("Percentage must be between 0 and 100");
@@ -25,6 +49,15 @@ function lightenColor(color, percent) {
   return [r, g, b];
 }
 
+/**
+ * Darkens a color by a given percentage
+ * @param {number[]} color - The RGB array to darken
+ * @param {number} percent - The percentage to darken the color by
+ * @returns {number[]} The darkened RGB array
+ * @throws {Error} If the percentage is not between 0 and 100
+ * @example
+ * darkenColor([255, 0, 0], 50); // [128, 0, 0] (dark red)
+ */
 function darkenColor(color, percent) {
   if (percent < 0 || percent > 100) {
     throw new Error("Percentage must be between 0 and 100");
@@ -36,6 +69,13 @@ function darkenColor(color, percent) {
   return [r, g, b];
 }
 
+/**
+ * Converts an RGB color to HSL 
+ * @param {number[]} color - The RGB array to convert
+ * @returns {number[]} The HSL array
+ * @example
+ * rgbToHsl([255, 0, 0]); // [0, 100, 50] (red)
+ */
 function rgbToHsl(color)
 {
   const r = color[0] / 255;
@@ -73,6 +113,13 @@ function rgbToHsl(color)
   return [h, s, l];
 }
 
+/**
+ * Converts an HSL color to RGB
+ * @param {number[]} hsl - The HSL array to convert
+ * @returns {number[]} The RGB array
+ * @example
+ * hslToRgb([0, 100, 50]); // [255, 0, 0] (red)
+ */
 function hslToRgb(hsl) {
   let h = hsl[0];
   let s = hsl[1];
@@ -122,6 +169,14 @@ function hslToRgb(hsl) {
 
 }
 
+/**
+ * Returns the complimentary color of a given color
+ * @param {number[]} color - The RGB array to get the complimentary color of
+ * @returns {number[]} The complimentary RGB array
+ * @borrows rgbToHsl
+ * @example
+ * getComplimentaryColor([255, 0, 0]); // [0, 255, 255] (cyan)
+ */
 function getComplimentaryColor(color) {
   // compliment of black is white
   if (color[0] === 0 && color[1] === 0 && color[2] === 0) {
