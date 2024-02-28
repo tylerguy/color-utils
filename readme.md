@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD033 MD036 -->
 # Color-Utils
 
 ## Description
