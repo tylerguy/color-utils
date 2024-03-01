@@ -189,6 +189,32 @@ function getComplimentaryColor(color) {
   return hslToRgb([h, hsl[1], hsl[2]]);
 }
 
+/**
+ * Returns the triadic colors of a given color
+ * @param {number[]} color - The RGB array to get the triadic colors of
+ * @returns {number[], number[]} Returns an array containing two RGB colors
+ */
+function getTriadicColors(color) {
+  const hsl = rgbToHsl(color);
+  const h1 = (hsl[0] + 120) % 360; 
+  const h2 = (hsl[0] + 240) % 360;
+  return [hslToRgb([h1, hsl[1], hsl[2]]), hslToRgb([h2, hsl[1], hsl[2]])];
+}
+
+/**
+ * Returns the tetra colors of a given color
+ * @param {number[]} color - The RGB array to get the tetrad colors of
+ * @returns {number[], number[], number[]} Returns an array containing three RGB colors
+ */
+function getTetradColors(color) {
+  const hsl = rgbToHsl(color)
+  const h1 = (hsl[0] + 90) % 360
+  const h2 = (hsl[0] + 180) % 360
+  const h3 = (hsl[0] + 270) % 360
+  return [hslToRgb([h1, hsl[1], hsl[2] ]), hslToRgb([h2, hsl[1], hsl[2]]), hslToRgb([h3, hsl[1], hsl[2] ])];
+}
+
+
 module.exports = {
   hexToRgb,
   rgbToHex,
@@ -196,5 +222,7 @@ module.exports = {
   darkenColor,
   getComplimentaryColor,
   rgbToHsl,
-  hslToRgb
+  hslToRgb,
+  getTriadicColors,
+  getTetradColors
 };
