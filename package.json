@@ -1,7 +1,7 @@
 {
   "name": "@tylerguy/color-utils",
   "description": "A collection of utilities for working with colors in JavaScript",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "main": "dist/index.ts",
   "types": "dist/index.d.ts",
   "files": [
